@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Naya 🎀</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#ffeaf3,#ffd0e4);
+    color:#7b3855;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 10% 20%,rgba(255,255,255,.8) 0 5px,transparent 6px),
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,.6) 0 4px,transparent 5px),
+    radial-gradient(circle at 30% 80%,rgba(255,255,255,.7) 0 5px,transparent 6px);
+    pointer-events:none;
+}
+
+.floating{
+    position:fixed;
+    pointer-events:none;
+    animation:float 6s ease-in-out infinite;
+    z-index:0;
+}
+
+.f1{top:10%;left:8%;font-size:25px}
+.f2{top:25%;right:8%;font-size:20px;animation-delay:1s}
+.f3{bottom:20%;left:7%;font-size:22px;animation-delay:2s}
+.f4{bottom:10%;right:10%;font-size:27px;animation-delay:3s}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(-18px) rotate(8deg)}
+}
+
+/* PAGES */
+
+.page{
+    display:none;
+    min-height:100vh;
+    width:100%;
+    padding:35px 20px 100px;
+    position:relative;
+    z-index:1;
+    animation:fade .5s ease;
+}
+
+.page.active{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:translateX(20px)}
+    to{opacity:1;transform:translateX(0)}
+}
+
+.container{
+    width:100%;
+    max-width:650px;
+    text-align:center;
+}
+
+h1{
+    font-family:'Pacifico',cursive;
+    color:#e65386;
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+h2{
+    color:#d94d7d;
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+p{
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* BUTTON */
+
+.btn{
+    border:0;
+    background:linear-gradient(135deg,#ed6f9d,#d94c80);
+    color:white;
+    padding:13px 25px;
+    border-radius:30px;
+    font-family:'Poppins';
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(214,72,121,.25);
+    transition:.25s;
+    margin:8px;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(214,72,121,.35);
+}
+
+.back{
+    background:#fff;
+    color:#d94d7d;
+}
+
+/* CARD */
+
+.card{
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:28px;
+    padding:25px;
+    box-shadow:0 15px 40px rgba(190,76,119,.15);
+    margin:15px 0;
+}
+
+.hero-heart{
+    font-size:80px;
+    animation:heartbeat 1.6s infinite;
+    margin-bottom:15px;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.15)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.12)}
+}
+
+/* PAGE 1 */
+
+.bow{
+    font-size:65px;
+    margin-bottom:5px;
+}
+
+.late{
+    display:inline-block;
+    background:#fff;
+    padding:7px 16px;
+    border-radius:20px;
+    font-size:12px;
+    color:#d94d7d;
+    margin-bottom:15px;
+}
+
+/* PAGE 2 */
+
+.wishes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:20px;
+}
+
+.wish{
+    background:#fff;
+    border-radius:20px;
+    padding:18px 10px;
+    box-shadow:0 8px 20px rgba(180,70,110,.1);
+}
+
+.wish .emoji{
+    font-size:30px;
+    display:block;
+    margin-bottom:7px;
+}
+
+.wish b{
+    font-size:13px;
+}
+
+.wish p{
+    font-size:11px;
+    margin-top:4px;
+}
+
+/* PAGE 3 */
+
+.reminders{
+    text-align:left;
+    margin-top:15px;
+}
+
+.reminder{
+    background:rgba(255,255,255,.8);
+    padding:13px 15px;
+    border-radius:18px;
+    margin:8px 0;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    font-size:13px;
+    box-shadow:0 5px 15px rgba(180,70,110,.08);
+}
+
+.number{
+    background:#f47da5;
+    color:white;
+    min-width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* PAGE 4 */
+
+.polaroids{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:20px;
+}
+
+.polaroid{
+    background:white;
+    padding:10px 10px 18px;
+    border-radius:4px;
+    transform:rotate(-2deg);
+    box-shadow:0 8px 20px rgba(130,50,80,.15);
+}
+
+.polaroid:nth-child(even){
+    transform:rotate(3deg);
+}
+
+.photo{
+    height:115px;
+    border-radius:3px;
+    background:linear-gradient(135deg,#ffc2da,#ffeaf2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+}
+
+.polaroid p{
+    font-family:'Pacifico';
+    margin-top:8px;
+    font-size:12px;
+}
+
+/* PAGE 5 */
+
+.big-message{
+    font-size:16px;
+    text-align:left;
+}
+
+.big-message span{
+    color:#e25386;
+    font-weight:600;
+}
+
+/* PAGE 6 */
+
+.gift-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.gift{
+    height:130px;
+    background:#fff;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(180,70,110,.12);
+    transition:.3s;
+}
+
+.gift:hover{
+    transform:scale(1.05) rotate(2deg);
+}
+
+.gift-message{
+    margin-top:20px;
+    min-height:55px;
+    font-size:14px;
+    font-weight:500;
+    color:#d94d7d;
+}
+
+/* PAGE 7 */
+
+.bucket{
+    text-align:left;
+}
+
+.bucket-item{
+    background:white;
+    margin:10px 0;
+    padding:15px 18px;
+    border-radius:20px;
+    box-shadow:0 6px 18px rgba(180,70,110,.08);
+}
+
+.bucket-item b{
+    color:#dd527f;
+}
+
+/* PAGE 8 GAME */
+
+.flowers{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin:25px 0;
+}
+
+.flower{
+    background:white;
+    border:0;
+    border-radius:22px;
+    padding:20px 5px;
+    font-size:42px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(180,70,110,.12);
+}
+
+.flower:hover{
+    transform:translateY(-5px);
+}
+
+.game-result{
+    min-height:45px;
+    color:#d94d7d;
+    font-weight:600;
+}
+
+/* PAGE 9 */
+
+.letter{
+    background:#fff9fc;
+    border-radius:8px;
+    padding:28px;
+    text-align:left;
+    box-shadow:0 15px 35px rgba(130,50,80,.15);
+    position:relative;
+}
+
+.letter::before{
+    content:"💗";
+    position:absolute;
+    top:-18px;
+    right:-8px;
+    font-size:35px;
+}
+
+.letter p{
+    margin-bottom:12px;
+}
+
+.signature{
+    font-family:'Pacifico';
+    text-align:right;
+    color:#dc527f;
+    margin-top:20px;
+}
+
+/* PAGE 10 */
+
+.cake{
+    font-size:90px;
+    animation:cake 2s infinite ease-in-out;
+}
+
+@keyframes cake{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+.final{
+    font-family:'Pacifico';
+    color:#e15184;
+    font-size:35px;
+}
+
+.final-small{
+    margin:15px 0 25px;
+}
+
+/* NAV */
+
+.nav{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:20;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    padding:7px;
+    border-radius:30px;
+    box-shadow:0 8px 25px rgba(130,50,80,.15);
+    display:flex;
+    gap:4px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#efb2c8;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#df5784;
+    width:20px;
+    border-radius:10px;
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    pointer-events:none;
+    z-index:50;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:480px){
+    h1{font-size:35px}
+    h2{font-size:22px}
+    .page{padding-left:16px;padding-right:16px}
+    .wish{padding:15px 7px}
+    .wish p{font-size:10px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating f1">🌸</div>
+<div class="floating f2">🎀</div>
+<div class="floating f3">♡</div>
+<div class="floating f4">🌷</div>
+
+
+<!-- ================= PAGE 1 ================= -->
+
+<section class="page active" id="page1">
+<div class="container">
+
+<div class="bow">🎀</div>
+
+<span class="late">a little bit late... but still from the heart 💗</span>
+
+<h1>Happy Birthday,<br>Naya! 🌷</h1>
+
+<div class="hero-heart">💗</div>
+
+<div class="card">
+<p>
+oke... pertama-tama aku mau bilang...
+</p>
+
+<br>
+
+<p>
+<strong>MAAF UCAPANNYA TELAT 😭</strong>
+</p>
+
+<br>
+
+<p>
+tapi walaupun telat, semoga hadiah kecil ini
+bisa bikin kamu senyum sedikit hari ini.
+</p>
+</div>
+
+<button class="btn" onclick="nextPage()">
+buka hadiahnya 🎁
+</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page" id="page2">
+<div class="container">
+
+<h2>sedikit doa buat kamu 🌷</h2>
+
+<p>
+di umur yang baru ini, semoga...
+</p>
+
+<div class="wishes">
+
+<div class="wish">
+<span class="emoji">🤍</span>
+<b>Selalu sehat</b>
+<p>semoga badan dan pikiran kamu selalu sehat.</p>
+</div>
+
+<div class="wish">
+<span class="emoji">🌸</span>
+<b>Lebih bahagia</b>
+<p>semoga lebih banyak alasan untuk tersenyum.</p>
+</div>
+
+<div class="wish">
+<span class="emoji">✨</span>
+<b>Impian tercapai</b>
+<p>semoga satu-satu keinginanmu bisa terwujud.</p>
+</div>
+
+<div class="wish">
+<span class="emoji">💰</span>
+<b>Rezeki lancar</b>
+<p>semoga selalu ada jalan baik yang datang.</p>
+</div>
+
+<div class="wish">
+<span class="emoji">🏡</span>
+<b>Keluarga bahagia</b>
+<p>semoga orang-orang yang kamu sayangi selalu baik-baik saja.</p>
+</div>
+
+<div class="wish">
+<span class="emoji">🫶</span>
+<b>Dikelilingi orang baik</b>
+<p>semoga kamu selalu bertemu orang yang tulus.</p>
+</div>
+
+</div>
+
+<button class="btn" onclick="nextPage()">lanjut 🌷</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page" id="page3">
+<div class="container">
+
+<h2>10 reminder buat Naya 🧸</h2>
+
+<p>karena kadang orang paling perhatian justru lupa perhatian sama dirinya sendiri.</p>
+
+<div class="reminders">
+
+<div class="reminder"><span class="number">1</span> jangan lupa makan 🍚</div>
+<div class="reminder"><span class="number">2</span> jangan lupa minum air 💧</div>
+<div class="reminder"><span class="number">3</span> jangan lupa sholat 🤍</div>
+<div class="reminder"><span class="number">4</span> jangan terlalu sering begadang 🌙</div>
+<div class="reminder"><span class="number">5</span> kalau capek, istirahat 🛌</div>
+<div class="reminder"><span class="number">6</span> jangan terlalu keras sama diri sendiri 🫂</div>
+<div class="reminder"><span class="number">7</span> jangan lupa senyum hari ini 😊</div>
+<div class="reminder"><span class="number">8</span> jangan pendam semuanya sendirian 💌</div>
+<div class="reminder"><span class="number">9</span> apresiasi diri sendiri 🌷</div>
+<div class="reminder"><span class="number">10</span> tetap jadi Naya yang apa adanya 🎀</div>
+
+</div>
+
+<button class="btn" onclick="nextPage()">masih ada lagi 👀</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 4 ================= -->
+
+<section class="page" id="page4">
+<div class="container">
+
+<h2>things i appreciate about you 💗</h2>
+
+<p>
+bukan cuma soal ulang tahun. ada beberapa hal kecil yang layak kamu hargai dari diri kamu sendiri.
+</p>
+
+<div class="polaroids">
+
+<div class="polaroid">
+<div class="photo">🌷</div>
+<p>kamu punya sisi baik</p>
+</div>
+
+<div class="polaroid">
+<div class="photo">🧸</div>
+<p>kamu tetap bertahan</p>
+</div>
+
+<div class="polaroid">
+<div class="photo">🌸</div>
+<p>kamu punya cara sendiri</p>
+</div>
+
+<div class="polaroid">
+<div class="photo">🎀</div>
+<p>kamu itu berharga</p>
+</div>
+
+</div>
+
+<button class="btn" onclick="nextPage()">lanjut 💕</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 5 ================= -->
+
+<section class="page" id="page5">
+<div class="container">
+
+<h2>kalau suatu hari kamu lagi sedih... 🧸</h2>
+
+<div class="card big-message">
+
+<p>
+kalau suatu hari semuanya terasa berat,
+</p>
+
+<br>
+
+<p>
+<strong>nggak apa-apa.</strong>
+</p>
+
+<br>
+
+<p>
+kamu nggak harus selalu kuat setiap saat.
+kadang istirahat juga termasuk bagian dari perjalanan.
+</p>
+
+<br>
+
+<p>
+kalau hari ini belum sesuai harapan,
+bukan berarti besok juga akan sama.
+</p>
+
+<br>
+
+<p>
+<span>pelan-pelan aja, Naya.</span>
+</p>
+
+<br>
+
+<p>
+kamu masih punya banyak hari baik yang belum kamu temui. 🌷
+</p>
+
+</div>
+
+<button class="btn" onclick="nextPage()">aku punya hadiah 🎁</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 6 ================= -->
+
+<section class="page" id="page6">
+<div class="container">
+
+<h2>pilih satu hadiah 🎁</h2>
+
+<p>jangan pilih semuanya sekaligus wkwk 😭</p>
+
+<div class="gift-grid">
+
+<div class="gift" onclick="gift(1)">🎁</div>
+<div class="gift" onclick="gift(2)">🎀</div>
+<div class="gift" onclick="gift(3)">💝</div>
+<div class="gift" onclick="gift(4)">🧸</div>
+
+</div>
+
+<div class="gift-message" id="giftMessage">
+pilih salah satu... 👀
+</div>
+
+<button class="btn" onclick="nextPage()">lanjut 🌸</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 7 ================= -->
+
+<section class="page" id="page7">
+<div class="container">
+
+<h2>semoga tahun ini... ✨</h2>
+
+<div class="bucket">
+
+<div class="bucket-item">
+🌸 <b>lebih banyak ketawa</b><br>
+daripada nangis.
+</div>
+
+<div class="bucket-item">
+✨ <b>lebih banyak kabar baik</b><br>
+daripada hal yang bikin kecewa.
+</div>
+
+<div class="bucket-item">
+🫶 <b>lebih banyak orang tulus</b><br>
+yang hadir tanpa bikin kamu merasa sendirian.
+</div>
+
+<div class="bucket-item">
+🎓 <b>lebih banyak pencapaian</b><br>
+yang bikin kamu bangga sama diri sendiri.
+</div>
+
+<div class="bucket-item">
+💗 <b>lebih banyak momen sederhana</b><br>
+yang nantinya jadi kenangan indah.
+</div>
+
+</div>
+
+<button class="btn" onclick="nextPage()">ada game kecil 🎮</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 8 ================= -->
+
+<section class="page" id="page8">
+<div class="container">
+
+<h2>pilih bunga untuk Naya 🌷</h2>
+
+<p>
+katanya bunga yang kamu pilih punya pesan rahasia 👀
+</p>
+
+<div class="flowers">
+
+<button class="flower" onclick="flower(1)">🌷</button>
+<button class="flower" onclick="flower(2)">🌸</button>
+<button class="flower" onclick="flower(3)">🌹</button>
+<button class="flower" onclick="flower(4)">🌻</button>
+<button class="flower" onclick="flower(5)">🪻</button>
+<button class="flower" onclick="flower(6)">🌺</button>
+
+</div>
+
+<div class="game-result" id="flowerResult">
+pilih satu bunga...
+</div>
+
+<button class="btn" onclick="nextPage()">lanjut 💌</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 9 ================= -->
+
+<section class="page" id="page9">
+<div class="container">
+
+<h2>surat kecil untuk Naya 💌</h2>
+
+<div class="letter">
+
+<p>
+hai Naya,
+</p>
+
+<p>
+mungkin ucapan ini datang sedikit terlambat,
+tapi semoga kamu nggak keberatan menerima hadiah kecil ini.
+</p>
+
+<p>
+aku cuma mau bilang, semoga di umur kamu yang baru,
+kamu bisa lebih sering menghargai diri sendiri.
+jangan cuma melihat apa yang belum kamu punya,
+tapi lihat juga sejauh apa kamu sudah berjalan.
+</p>
+
+<p>
+semoga hal-hal baik datang ke kamu,
+semoga ketika kamu sedang lelah ada sesuatu yang membuatmu
+kembali tersenyum,
+dan semoga apa pun yang sedang kamu perjuangkan
+pelan-pelan menemukan jalannya.
+</p>
+
+<p>
+dan satu lagi...
+</p>
+
+<p>
+<strong>jangan lupa bahagia ya, Naya. 🌷</strong>
+</p>
+
+<p>
+sekali lagi, happy birthday.
+maaf telat 😭🎀
+</p>
+
+<div class="signature">
+from someone who wishes you well ♡
+</div>
+
+</div>
+
+<button class="btn" onclick="nextPage()">one last thing... 🎂</button>
+
+</div>
+</section>
+
+
+<!-- ================= PAGE 10 ================= -->
+
+<section class="page" id="page10">
+<div class="container">
+
+<div class="cake">🎂</div>
+
+<div class="final">
+Happy Birthday,<br>Naya! 💗
+</div>
+
+<p class="final-small">
+semoga umur barumu jadi chapter yang jauh lebih indah. 🌸
+</p>
+
+<div class="card">
+
+<p>
+semoga kamu sehat,<br>
+semoga kamu bahagia,<br>
+semoga rezekimu lancar,<br>
+semoga impianmu satu per satu tercapai,<br>
+dan semoga selalu ada alasan untuk tersenyum.
+</p>
+
+<br>
+
+<p>
+<strong>
+thank you for existing, Naya. 🎀
+</strong>
+</p>
+
+</div>
+
+<button class="btn" onclick="celebrate()">
+klik kalau kamu udah senyum 🤭
+</button>
+
+<div id="ending" style="margin-top:15px;font-weight:600;color:#df527f;"></div>
+
+</div>
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="nav">
+
+<div class="dot active"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+
+</div>
+
+
+<script>
+
+let currentPage = 1;
+const totalPages = 10;
+
+function showPage(number){
+
+    document.querySelectorAll('.page').forEach(page=>{
+        page.classList.remove('active');
+    });
+
+    document.getElementById('page'+number).classList.add('active');
+
+    document.querySelectorAll('.dot').forEach((dot,index)=>{
+        dot.classList.toggle('active',index === number-1);
+    });
+
+    currentPage = number;
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+function nextPage(){
+
+    if(currentPage < totalPages){
+        showPage(currentPage + 1);
+    }
+}
+
+function previousPage(){
+
+    if(currentPage > 1){
+        showPage(currentPage - 1);
+    }
+}
+
+
+/* HADIAH */
+
+function gift(number){
+
+    const messages = {
+
+        1:"semoga tahun ini kamu mendapatkan banyak hal yang selama ini kamu doakan. 💗",
+
+        2:"ingat ya, kamu nggak harus sempurna untuk menjadi seseorang yang berharga. 🎀",
+
+        3:"semoga setiap langkah kecilmu tahun ini membawa kamu lebih dekat dengan impianmu. ✨",
+
+        4:"kalau lagi capek, jangan lupa: istirahat dulu, bukan menyerah. 🧸"
+
+    };
+
+    document.getElementById('giftMessage').innerHTML =
+        messages[number];
+}
+
+
+/* FLOWER GAME */
+
+function flower(number){
+
+    const messages = [
+
+        "🌷 kamu mendapatkan pesan: semoga selalu ada sesuatu yang membuatmu tersenyum hari ini.",
+
+        "🌸 kamu mendapatkan pesan: jangan lupa bahwa kamu sudah melakukan yang terbaik.",
+
+        "🌹 kamu mendapatkan pesan: semoga cinta dan kebaikan selalu menemukan jalan ke kamu.",
+
+        "🌻 kamu mendapatkan pesan: semoga hari-harimu semakin cerah.",
+
+        "🪻 kamu mendapatkan pesan: semoga kamu bertemu banyak hal indah yang nggak pernah kamu duga.",
+
+        "🌺 kamu mendapatkan pesan: semoga tahun ini menjadi salah satu tahun terbaikmu."
+
+    ];
+
+    document.getElementById('flowerResult').innerHTML =
+        messages[number-1];
+}
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+    const emojis = ["💗","🌸","🎀","✨","💕","🌷","♡"];
+
+    for(let i=0;i<45;i++){
+
+        const confetti = document.createElement('div');
+
+        confetti.className = 'confetti';
+
+        confetti.innerText =
+            emojis[Math.floor(Math.random()*emojis.length)];
+
+        confetti.style.left =
+            Math.random()*100 + 'vw';
+
+        confetti.style.fontSize =
+            (12 + Math.random()*18) + 'px';
+
+        confetti.style.animationDuration =
+            (2 + Math.random()*3) + 's';
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },5000);
+    }
+}
+
+
+/* ENDING */
+
+function celebrate(){
+
+    createConfetti();
+
+    document.getElementById('ending').innerHTML =
+        "NAH KAN SENYUM 😭💗 ketahuan!!";
+
+    setTimeout(createConfetti,1200);
+    setTimeout(createConfetti,2500);
+}
+
+
+/* RANDOM CONFETTI DI AWAL */
+
+setTimeout(createConfetti,700);
+
+</script>
+
+</body>
+  </html>
